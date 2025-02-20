@@ -5,6 +5,9 @@ import image2 from '../src/img/2.png';
 import image3 from '../src/img/3.png';
 import muchacho from '../src/img/muchacho.png';
 
+import React from 'react';
+import { motion } from "motion/react"
+
 function App() {
   return (
     <main>
@@ -27,7 +30,7 @@ function App() {
                         <span className="line line-3"></span>
                     </button>
                 </header>
-                <div className="content">
+                <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 2 }} className="content">
                     <div className="content-left">
                         <h1>Hi, I am John, <br />Creative Technologist</h1>
                         <p>
@@ -40,7 +43,7 @@ function App() {
                     <div className="content-right">
                         <img src={muchacho} alt="John" />
                     </div>
-                </div>
+                </motion.div>
             </div>
             <section className="recent">
                 <div className="container">
@@ -50,7 +53,7 @@ function App() {
                     </div>
 
                     <div className="recent-container">
-                        <div className="recent-card-container">
+                        <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} className="recent-card-container">
                             <h3>Making a design system from scratch</h3>
                             <div className="description">
                                 <p>12 Feb 2020</p>
@@ -62,9 +65,9 @@ function App() {
                                 sint. Velit officia consequat duis enim velit mollit. Exercitation
                                 veniam consequat sunt nostrud amet.
                             </p>
-                        </div>
+                        </motion.div>
 
-                        <div className="recent-card-container">
+                        <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} className="recent-card-container">
                             <h3>Creating pixel perfect icons in Figma</h3>
                             <div className="description">
                                 <p>12 Feb 2020</p>
@@ -76,7 +79,7 @@ function App() {
                                 sint. Velit officia consequat duis enim velit mollit. Exercitation
                                 veniam consequat sunt nostrud amet.
                             </p>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -85,7 +88,7 @@ function App() {
                     <div className="works-header">
                         <h3>Featured works</h3>
                     </div>
-                    <div className="works-card-container">
+                    <motion.div initial={{ x: 0 }} whileHover={{ x: 50 }} transition={{ duration: 0.5 }} className="works-card-container">
                         <img src={image1} alt="1" />
                         <div className="works-card-description">
                             <h3>Designing Dashboards</h3>
@@ -99,8 +102,8 @@ function App() {
                                 veniam consequat sunt nostrud amet.
                             </p>
                         </div>
-                    </div>
-                    <div className="works-card-container">
+                    </motion.div>
+                    <motion.div initial={{ x: 0 }} whileHover={{ x: 50 }} transition={{ duration: 0.3 }} className="works-card-container">
                         <img src={image2} alt="2" />
                         <div className="works-card-description">
                             <h3>Vibrant Portraits of 2020</h3>
@@ -114,8 +117,8 @@ function App() {
                                 veniam consequat sunt nostrud amet.
                             </p>
                         </div>
-                    </div>
-                    <div className="works-card-container">
+                    </motion.div>
+                    <motion.div initial={{ x: 0 }} whileHover={{ x: 50 }} transition={{ duration: 0.5 }} className="works-card-container">
                         <img src={image3} alt="3" />
                         <div className="works-card-description">
                             <h3>36 Days of Malayalam type</h3>
@@ -129,7 +132,7 @@ function App() {
                                 veniam consequat sunt nostrud amet.
                             </p>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
             <footer>
